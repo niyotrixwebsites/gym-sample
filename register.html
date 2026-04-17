@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Register | Sample Gym</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body><div data-shell>
+<section class="page-hero"><div class="container"><p class="eyebrow">Membership Onboarding</p><h1>REGISTER NOW</h1><p class="lead">Step into Sample Gym in under 3 minutes.</p></div></section>
+<section class="section" data-stepper><div class="container grid-2"><aside class="card reveal"><span class="badge gold">Selected Plan</span><h3>Standard Membership</h3><p>Rs 1,499/month</p><ul><li>4 PT sessions</li><li>Unlimited classes</li><li>Nutrition guidance</li></ul></aside><form class="card reveal"><p id="stepLabel" class="eyebrow">Step 1 of 3</p>
+<div data-step="1"><label>Full Name<input required type="text" /></label><label>Phone Number<input required type="tel" pattern="[6-9]{1}[0-9]{9}" /></label><label>Email<input required type="email" /></label><label>Start Date<input type="date" /></label><div class="btn-row"><button type="button" class="btn btn-primary" data-next>Next</button></div></div>
+<div data-step="2" hidden><label>Fitness Level<select><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></label><label>Primary Goal<select><option>Lose fat</option><option>Build muscle</option><option>Improve endurance</option></select></label><label>Medical Conditions<textarea rows="4"></textarea></label><div class="btn-row"><button type="button" class="btn btn-ghost" data-prev>Back</button><button type="button" class="btn btn-primary" data-next>Next</button></div></div>
+<div data-step="3" hidden><p class="muted">Review details and confirm your membership to proceed to payment.</p><label><input type="checkbox" required /> I agree to Terms and Privacy Policy.</label><div class="btn-row"><button type="button" class="btn btn-ghost" data-prev>Back</button><a href="payment.html" class="btn btn-primary">Confirm & Pay</a></div></div>
+</form></div></section>
+</div><script src="app.js" defer></script></body></html>

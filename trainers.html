@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trainers | Sample Gym</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Montserrat:wght@700;800;900&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div data-shell>
+  <section class="page-hero">
+    <div class="container reveal">
+      <h1>MEET YOUR COACHES</h1>
+      <p class="lead">Certified. Experienced. Results-obsessed.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-3 trainer-grid">
+        <article class="card trainer-card reveal" data-trainer data-name="Coach Rohan Mehta" data-role="Head Strength Coach" data-certs="NSCA, NASM · 9 years" data-spec="Powerlifting, Athletes" data-bio="Strength specialist focused on progressive overload, form precision, and performance programming.">
+          <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=80" alt="Coach Rohan Mehta" />
+          <h3>Coach Rohan Mehta</h3><p class="gold">Head Strength Coach</p><p class="muted">Powerlifting · Athletes · 9 years</p><button class="btn btn-outline" type="button">View Profile</button>
+        </article>
+        <article class="card trainer-card reveal" data-trainer data-name="Coach Ananya Sharma" data-role="Nutrition & Weight Loss" data-certs="Registered Dietitian, ACSM · 6 years" data-spec="Fat Loss, Meal Plans" data-bio="Nutrition and fat-loss coach who creates practical meal strategies and compliance systems.">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=900&q=80" alt="Coach Ananya Sharma" />
+          <h3>Coach Ananya Sharma</h3><p class="gold">Nutrition & Weight Loss</p><p class="muted">Fat Loss · Meal Plans · 6 years</p><button class="btn btn-outline" type="button">View Profile</button>
+        </article>
+        <article class="card trainer-card reveal" data-trainer data-name="Coach Aryan Patel" data-role="Group Fitness & HIIT" data-certs="ACE, Les Mills · 5 years" data-spec="HIIT, Boxing, Group Classes" data-bio="High-energy group coach for conditioning, boxing circuits, and metabolic sessions.">
+          <img src="https://images.unsplash.com/photo-1571019613914-85f342c55f6d?auto=format&fit=crop&w=900&q=80" alt="Coach Aryan Patel" />
+          <h3>Coach Aryan Patel</h3><p class="gold">Group Fitness & HIIT</p><p class="muted">HIIT · Boxing · 5 years</p><button class="btn btn-outline" type="button">View Profile</button>
+        </article>
+        <article class="card trainer-card reveal" data-trainer data-name="Coach Priya Nair" data-role="Women's Fitness & Yoga" data-certs="E-RYT 200, NASM · 7 years" data-spec="Women's Fitness, Yoga, Flexibility" data-bio="Coach specializing in women's strength, mobility, and yoga-based recovery.">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Coach Priya Nair" />
+          <h3>Coach Priya Nair</h3><p class="gold">Women's Fitness & Yoga</p><p class="muted">Yoga · Flexibility · 7 years</p><button class="btn btn-outline" type="button">View Profile</button>
+        </article>
+        <article class="card trainer-card reveal" data-trainer data-name="Coach Aakash Singh" data-role="Sports Performance" data-certs="NSCA-CSCS, USAW · 8 years" data-spec="Olympic Lifting, Speed Training" data-bio="Athlete-performance coach for speed, power, and explosive strength.">
+          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=80" alt="Coach Aakash Singh" />
+          <h3>Coach Aakash Singh</h3><p class="gold">Sports Performance</p><p class="muted">Olympic Lifting · 8 years</p><button class="btn btn-outline" type="button">View Profile</button>
+        </article>
+        <article class="card trainer-card reveal" data-trainer data-name="Coach Meera Kapoor" data-role="Rehab & Corrective Exercise" data-certs="NASM-CES · 10 years" data-spec="Injury Recovery, Posture, Mobility" data-bio="Corrective exercise specialist for recovery, movement quality, and long-term training safety.">
+          <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=80" alt="Coach Meera Kapoor" />
+          <h3>Coach Meera Kapoor</h3><p class="gold">Rehab & Corrective Exercise</p><p class="muted">Mobility · Recovery · 10 years</p><button class="btn btn-outline" type="button">View Profile</button>
+        </article>
+      </div>
+
+      <div style="text-align:center;margin-top:28px" class="reveal">
+        <h3>Not sure which trainer fits you? Chat with us.</h3>
+        <a href="https://wa.me/910000000000?text=Hi!%20Please%20help%20me%20choose%20the%20right%20trainer." class="btn" style="background:#25d366;color:#fff">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="trainerModal" role="dialog" aria-modal="true" aria-labelledby="trainerModalName">
+    <div class="modal-content">
+      <button class="modal-close" id="trainerModalClose" type="button" aria-label="Close">x</button>
+      <h3 id="trainerModalName">Coach</h3>
+      <p class="gold" id="trainerModalRole"></p>
+      <p id="trainerModalBio"></p>
+      <p><strong>Certifications:</strong> <span id="trainerModalCerts"></span></p>
+      <p><strong>Specialties:</strong> <span id="trainerModalSpec"></span></p>
+      <a class="btn btn-primary" href="https://wa.me/910000000000?text=Hi!%20I%20want%20to%20book%20a%20free%20session." target="_blank" rel="noreferrer">Book a Free Session</a>
+    </div>
+  </div>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>

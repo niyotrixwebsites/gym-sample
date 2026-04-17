@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Admin Dashboard | Sample Gym</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="section" style="min-height:100vh">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:24px">
+      <div>
+        <p class="eyebrow">Admin Panel</p>
+        <h1 style="font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:0.95;margin:0">DASHBOARD</h1>
+      </div>
+      <button id="logoutBtn" class="btn btn-outline" type="button">Logout</button>
+    </div>
+
+    <section class="grid-4">
+      <article class="card"><h3>Active Members</h3><p class="gold" style="font-size:42px;font-family:'Bebas Neue',sans-serif;line-height:1;margin:8px 0">524</p></article>
+      <article class="card"><h3>New This Month</h3><p class="gold" style="font-size:42px;font-family:'Bebas Neue',sans-serif;line-height:1;margin:8px 0">38</p></article>
+      <article class="card"><h3>Revenue (INR)</h3><p class="gold" style="font-size:42px;font-family:'Bebas Neue',sans-serif;line-height:1;margin:8px 0">7,82,400</p></article>
+      <article class="card"><h3>Open Inquiries</h3><p class="gold" style="font-size:42px;font-family:'Bebas Neue',sans-serif;line-height:1;margin:8px 0">17</p></article>
+    </section>
+
+    <section class="section" style="padding:28px 0 0">
+      <div class="grid-2">
+        <article class="card">
+          <h3>Quick Actions</h3>
+          <div class="btn-row">
+            <button class="btn btn-primary" type="button">Add Member</button>
+            <button class="btn btn-outline" type="button">Create Promo Code</button>
+            <button class="btn btn-ghost" type="button">Edit Plans</button>
+          </div>
+        </article>
+        <article class="card">
+          <h3>System Status</h3>
+          <p class="muted">Demo dashboard active. Replace with secure backend APIs for production.</p>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script>
+  if (sessionStorage.getItem('ie-admin-auth') !== '1') {
+    window.location.href = 'admin.html';
+  }
+
+  document.getElementById('logoutBtn').addEventListener('click', function () {
+    sessionStorage.removeItem('ie-admin-auth');
+    window.location.href = 'admin.html';
+  });
+</script>
+</body>
+</html>

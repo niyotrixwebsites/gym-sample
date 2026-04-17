@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Membership | Sample Gym</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Montserrat:wght@700;800;900&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div data-shell>
+<section class="page-hero">
+  <div class="container reveal">
+    <h1>MEMBERSHIP & REGISTRATION</h1>
+    <p class="lead">Choose your plan and complete registration in minutes.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="btn-row reveal" style="justify-content:center">
+      <button id="priceMonthly" class="btn btn-outline" type="button">Monthly</button>
+      <button id="priceAnnual" class="btn btn-primary" type="button">Annual (Save 20%)</button>
+    </div>
+
+    <div class="grid-3" style="margin-top:24px">
+      <article class="card plan-card reveal">
+        <h3>Basic</h3>
+        <p class="gold" data-monthly="Rs 999/mo" data-annual="Rs 800/mo">Rs 999/mo</p>
+        <ul><li>Gym Access</li><li>Group Classes 2/week</li><li>Personal Training: No</li><li>Nutrition: No</li></ul>
+        <button class="btn btn-outline" type="button" data-choose-plan data-plan="Basic" data-price="Rs 999">Choose Plan</button>
+      </article>
+      <article class="card plan-card featured reveal">
+        <span class="badge gold">Most Popular</span>
+        <h3>Standard</h3>
+        <p class="gold" data-monthly="Rs 1,499/mo" data-annual="Rs 1,200/mo">Rs 1,499/mo</p>
+        <ul><li>Unlimited Classes</li><li>4 PT Sessions/mo</li><li>Weekly Nutrition Tips</li><li>Priority Booking</li></ul>
+        <button class="btn btn-primary" type="button" data-choose-plan data-plan="Standard" data-price="Rs 1,499">Choose Plan</button>
+      </article>
+      <article class="card plan-card reveal">
+        <h3>Premium</h3>
+        <p class="gold" data-monthly="Rs 1,999/mo" data-annual="Rs 1,600/mo">Rs 1,999/mo</p>
+        <ul><li>Unlimited Classes</li><li>8 PT Sessions/mo</li><li>Custom Meal Plan</li><li>InBody Monthly</li></ul>
+        <button class="btn btn-outline" type="button" data-choose-plan data-plan="Premium" data-price="Rs 1,999">Choose Plan</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section elevated" id="registration">
+  <div class="container" style="max-width:920px">
+    <h2 class="reveal">COMPLETE YOUR REGISTRATION</h2>
+    <form id="membershipForm" class="card reveal">
+      <div class="grid-2 form-grid">
+        <label>Full Name*<input required type="text" /></label>
+        <label>Phone Number*<input required type="tel" pattern="[6-9]{1}[0-9]{9}" /></label>
+        <label>Email Address*<input required type="email" /></label>
+        <label>Date of Birth<input type="date" /></label>
+        <label>Gender<select><option>Male</option><option>Female</option><option>Other</option></select></label>
+        <label>Selected Plan<select id="selectedPlan"><option>Basic</option><option selected>Standard</option><option>Premium</option></select></label>
+        <label>Start Date<input type="date" /></label>
+        <label>Primary Goal<select><option>Lose Fat</option><option>Build Muscle</option><option>Improve Fitness</option><option>Other</option></select></label>
+        <label>How did you hear about us?<select><option>Google</option><option>Friend</option><option>Instagram</option><option>Walk-in</option><option>Other</option></select></label>
+      </div>
+      <button class="btn btn-primary" type="submit" style="width:100%">Proceed to Pay</button>
+      <p class="muted" style="text-align:center">Secure · Cancel Anytime · No Hidden Fees</p>
+    </form>
+
+    <article class="card reveal" id="paymentBlock" hidden>
+      <h3>Payment Summary</h3>
+      <p>Plan: <strong id="orderPlan">Standard</strong></p>
+      <p>Amount: <strong id="orderAmount">Rs 1,499</strong></p>
+      <button class="btn btn-primary" id="payNow" type="button">Pay Securely</button>
+      <p class="muted">UPI · Cards · Net Banking · Wallets</p>
+    </article>
+
+    <article class="card reveal" id="successBlock" hidden>
+      <h3 class="gold">WELCOME TO SAMPLE GYM</h3>
+      <p>Member ID: IE-52047 · Plan: <span id="successPlan">Standard</span></p>
+      <p class="muted">Check your email for your welcome kit.</p>
+    </article>
+
+    <p class="muted" style="margin-top:20px;text-align:center">SSL Secured · Razorpay Protected · Cancel Anytime · Satisfaction Guaranteed</p>
+  </div>
+</section>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>

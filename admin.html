@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Secure Access | Sample Gym</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="section" style="min-height:100vh;display:grid;place-items:center">
+	<div class="container" style="max-width:560px">
+		<article class="card reveal show">
+			<p class="eyebrow">Dashboard Access</p>
+			<h1 style="font-size:52px;margin:0 0 8px;font-family:'Bebas Neue',sans-serif">SECURE LOGIN</h1>
+			<p class="muted" style="margin-top:0">This is a separate admin login page and is not part of the public site navigation.</p>
+
+			<p class="badge gold" style="margin-bottom:12px">Demo Credentials</p>
+			<p style="margin:0 0 8px"><strong>Email:</strong> admin@samplegym.com</p>
+			<p style="margin:0 0 20px"><strong>Password:</strong> Admin@123</p>
+
+			<form id="adminLoginForm">
+				<label>Email
+					<input id="adminEmail" type="email" placeholder="admin@samplegym.com" required />
+				</label>
+				<label>Password
+					<input id="adminPassword" type="password" required />
+				</label>
+				<div class="btn-row">
+					<button class="btn btn-primary" type="submit">Sign In</button>
+				</div>
+			</form>
+
+			<p id="adminAuthMessage" class="muted" role="status" aria-live="polite" style="margin-top:10px"></p>
+			<p class="muted" style="margin-top:16px">Production note: replace this demo check with JWT auth on /dashboard/secure/login.</p>
+		</article>
+	</div>
+</main>
+
+<script>
+	const ADMIN_EMAIL = "admin@samplegym.com";
+	const ADMIN_PASSWORD = "Admin@123";
+
+	document.getElementById("adminLoginForm").addEventListener("submit", function (event) {
+		event.preventDefault();
+		const email = document.getElementById("adminEmail").value.trim().toLowerCase();
+		const password = document.getElementById("adminPassword").value;
+		const message = document.getElementById("adminAuthMessage");
+
+		if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+			message.style.color = "#22c55e";
+			message.textContent = "Login successful. Redirecting to dashboard...";
+			sessionStorage.setItem("ie-admin-auth", "1");
+			setTimeout(function () {
+				window.location.href = "admin-dashboard.html";
+			}, 400);
+			return;
+		}
+
+		message.style.color = "#ef4444";
+		message.textContent = "Invalid credentials. Use the demo credentials shown above.";
+	});
+</script>
+</body>
+</html>
